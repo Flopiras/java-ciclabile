@@ -25,7 +25,7 @@ public class ElencoInteri {
 	public int getElementoSuccessivo() {
         if (hasAncoraElementi()) {
             int element = numbers[currentIndex];
-            currentIndex = (currentIndex + 1) % numbers.length; 
+            currentIndex = currentIndex + 1; 
             return element;
         } else {
             throw new IllegalStateException("Nessun elemento rimasto.");
@@ -33,6 +33,6 @@ public class ElencoInteri {
     }
 
     public boolean hasAncoraElementi() {
-        return currentIndex < numbers.length;
+        return (currentIndex < numbers.length) ? true : false;
     }
 }
